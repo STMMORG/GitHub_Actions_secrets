@@ -2,13 +2,18 @@ on:
   workflow_dispatch:
 env:
   cat_name: "Puszek"
+  WORKFLOW_VAR: "WORKFLOW_VAR"
 jobs:
   display-variables:
     name: var.ENVIRONMENT_VAR
     runs-on: ubuntu-latest
     environment: test
+    env: 
+      JOB_VAR: "JOB_VAR"
     steps:
     - name: Use variables 1
+      env: 
+        STEP_VAR: "STEP_VAR"
       run: |
         echo "Repository variable : ${{vars.REPOSITORY_VAR}}"
         echo "Organization variable : ${{vars.ORGANIZATION_VAR}}"
