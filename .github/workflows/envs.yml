@@ -5,7 +5,7 @@ env:
   WORKFLOW_VAR: "WORKFLOW_VAR"
 jobs:
   display-variables:
-    name: var.ENVIRONMENT_VAR
+    name: vars.ENVIRONMENT_VAR
     runs-on: ubuntu-latest
     environment: test
     env: 
