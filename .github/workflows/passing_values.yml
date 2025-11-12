@@ -47,12 +47,16 @@ jobs:
           name: Wynik
           path: wynik.txt
 
-  # job_2:
-  #   name: Multiply by 9
-  #   needs: job_1
-  #   runs-on: windows-latest
-  #   steps:
-  #     - shell: bash
-  #       run: |
-  #         value=`cat NAZWA_PLIKU_Z_ARTEFAKTU`
-  #         echo $(expr $value \* 9) 
+  job_2:
+    name: Multiply by 9
+    needs: [job_1]
+    runs-on: windows-latest
+    steps:
+      - name: download
+        uses: actions/download-artifact@v4
+        with:
+          wynik: wynik.txt 
+      - shell: bash
+        run: |
+          value=`cat wynik`
+          echo $(expr $value \* 9) 
