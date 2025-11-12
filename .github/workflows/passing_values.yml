@@ -49,13 +49,13 @@ jobs:
 
   job_2:
     name: Multiply by 9
-    needs: [job_1]
+    needs: job_1
     runs-on: windows-latest
     steps:
       - name: download
         uses: actions/download-artifact@v4
         with:
-          wynik: wynik.txt 
+          wynik: Wynik
       - shell: bash
         run: |
           value=`cat wynik`
