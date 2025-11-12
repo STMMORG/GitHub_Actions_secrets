@@ -55,8 +55,8 @@ jobs:
       - name: download
         uses: actions/download-artifact@v4
         with:
-          name: wynik
+          name: wynik.txt
       - shell: bash
         run: |
-          value=`cat wynik`
+          value=`cat wynik.txt`
           echo $(expr $value \* 9) 
