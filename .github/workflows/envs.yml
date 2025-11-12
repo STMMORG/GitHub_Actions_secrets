@@ -11,7 +11,7 @@ jobs:
       run: |
         echo "Repository variable : ${{vars.REPOSITORY_VAR}}"
         echo "Organization variable : ${{vars.ORGANIZATION_VAR}}"
-        echo "Environment variable : ${{env.ENVIRONMENT_VAR}}"
+        echo "Environment variable : ${{envs.ENVIRONMENT_VAR}}"
         echo "Ala ma kota o nazwie $cat_name"
         echo "Powinna być zmienna w scopie workflow:$WORKFLOW_VAR"
         echo "Powinna być zmienna w scopie joba:$JOB_VAR"
